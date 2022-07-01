@@ -29,8 +29,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template/tree/4516f9903cfb9d316f79aa2498f9f1333fd9724e">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  <a href="https://github.com/vilchesplus/powershell_in_powerbi">
+    <img src="logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Best-README-Template</h3>
