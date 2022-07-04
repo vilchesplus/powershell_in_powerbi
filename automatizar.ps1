@@ -82,16 +82,12 @@ $b.guid #Espacios de trabajo que utilizan de alguna manera el gateway.
 $array1 #Dichos espacios de trabajo y sus datasets.
 
 $array1[5][5].guid[0] #Primer dataset del primer espacio de trabajo que tenemos.
-$array1[5]
+
 
 
 Get-powerbidataset -scope Organization -WorkspaceId $array1[5][3].guid
 
 Get-PowerBIDatasource -Scope Organization -DatasetId $array1[5][5].guid[0]
-Get-PowerBIDatasource -Scope Organization -DatasetId 1babee66-2198-465b-95cb-17c05759f8f4
-
-
-Get-powerbidataset -scope Organization -WorkspaceId 464ada52-46bb-4f8e-84f1-0b0a653744fb
 
 
 
@@ -154,7 +150,7 @@ foreach($i in 0..($datasetId).Length) {
 $gatewaypre = "93153ed3-9bd4-4b40-9a78-eadc854705c7"
 $gatewaypro = "fd6dcb5d-deb9-4cb7-9806-58dc8be6fa8f"
 
- Get-PowerBIWorkspace -Scope Organization -User adminiamgwbi@madrid.onmicrosoft.com
+ Get-PowerBIWorkspace -Scope Organization -User $USUARIO
  
 
  $trabajos = Get-PowerBIWorkspace -Scope Organization -All -Include Datasets, dataflows
@@ -164,12 +160,10 @@ $gatewaypro = "fd6dcb5d-deb9-4cb7-9806-58dc8be6fa8f"
 ($trabajos.Dataflows).Id -contains '84b219d2-d595-4906-b8b7-69ec91497f9e'
 ($trabajos.Dataflows).Id -contains  'cfacf66e-1efa-43c5-95c0-4a54cd4f217b'
 
-0..((($trabajos.Dataflows).Id).Count - 1) | Where { (($trabajos.Dataflows).Id)[$_] -eq '84b219d2-d595-4906-b8b7-69ec91497f9e' }    
-0..((($trabajos.Dataflows).Id).Count - 1) | Where { (($trabajos.Dataflows).Id)[$_] -eq 'cfacf66e-1efa-43c5-95c0-4a54cd4f217b' } #54bb59cb-1a2c-4f6b-ac59-90afb08ae7fd
-0..((($trabajos.Dataflows).Id).Count - 1) | Where { (($trabajos.Dataflows).Id)[$_] -eq '953bfcf8-4462-44e4-ba04-6e2b3ee5f813' } #1aa78f8b-5378-48b1-8eab-69cc7129fe98
- 
+#Ejemplo localizar un dataflow por id
+0..((($trabajos.Dataflows).Id).Count - 1) | Where { (($trabajos.Dataflows).Id)[$_] -eq '**********' }    
 
-0..((($trabajos.Dataflows).Name).Count - 1) | Where { (($trabajos.Dataflows).Name)[$_] -eq '****************' }  
+   
 
 
 
@@ -182,9 +176,9 @@ $gatewaypro = "fd6dcb5d-deb9-4cb7-9806-58dc8be6fa8f"
  $trabajos.Datasets | Sort-Object Name    |format-table Id, Name
 
  
- $trabajos.Length #1514 espacios de trabajo
+ $trabajos.Length 
 
- #$trabajos.id -like '80ee77d3-50f1-429e-8e44-750bc22eab1e'
+
 
 
  $array0 = 0..(($trabajos.Id).Length -1)
@@ -419,13 +413,12 @@ $datasourceUrl = "groups/80ee77d3-50f1-429e-8e44-750bc22eab1e/datasets/4dc4afac-
 
 ############################ Dataflows #################################################################
 $dataflow = Get-PowerBIDataflow -Scope Organization | Format-table Id, Name 
-$dataflow.Length #(106)
+$dataflow.Length 
 
 Get-PowerBIGatewayId -Scope Organization 
 Get-PowerBIWorkspace -Scope Organization -Id 80ee77d3-50f1-429e-8e44-750bc22eab1e
-(Get-powerbidataset -scope Organization -WorkspaceId  80ee77d3-50f1-429e-8e44-750bc22eab1e)
-$y = Get-PowerBIDataflow -Scope Organization -WorkspaceId 80ee77d3-50f1-429e-8e44-750bc22eab1e
-(Get-PowerBIDataflowDatasource -scope Organization -DataflowId  ae8c447e-7efa-4a85-a18f-fd73b3fe4e9c)
+Get-powerbidataset -scope Organization -WorkspaceId  80ee77d3-50f1-429e-8e44-750bc22eab1e
+Get-PowerBIDataflowDatasource -scope Organization -DataflowId  ae8c447e-7efa-4a85-a18f-fd73b3fe4e9c
 
  $datasetId_posicion = '60e314f5-ac2c-4934-b1b9-b1753757e7d0'
 
