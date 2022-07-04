@@ -64,7 +64,7 @@ Se trata de un script escrito en Powershell con el que se busca automatizar dife
 <!-- CONTACT -->
 ## Contact
 
-Your Name - vilchesplus@gmail.com
+Email - vilchesplus@gmail.com
 
 
 
