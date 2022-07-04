@@ -93,30 +93,7 @@ Get-PowerBIDatasource -Scope Organization -DatasetId 1babee66-2198-465b-95cb-17c
 
 Get-powerbidataset -scope Organization -WorkspaceId 464ada52-46bb-4f8e-84f1-0b0a653744fb
 
-#Indices: 5, 18, 38, 78, 80, 81, 155, 513, 514, 515
 
-c289978f-7601-4f21-bed9-2634a1d13203 ok # Se pueden cambiar todos, utilizan DATALAKE_Produccion.
-063451ff-93ed-4d0c-8ea6-7f08a7b9d7b5 ok # HELIX (ODBC) y DATALAKE_Desarrollo.
-36aba724-99d1-4c4a-bf78-8212294b0e60 ok # EazyBI (PostgreSQL ODBC Unicode SSL).
-d49dd5fe-9f0f-42c6-98cc-cea6af6d932f ok # HELIX (ODBC).
-dd90005f-20d2-4777-8760-d227a9d9ac39 ok # DATALAKE_Produccion.
-352c746e-ba10-4258-89a2-540b88f2da67 ok # PowerBI (Hay que hacer el conector).
-80ee77d3-50f1-429e-8e44-750bc22eab1e ok # Clarity_NIKU_sql16pro01 y HELIX (ODBC).
-a00df3a5-8cbb-4c89-bbe7-5449f82af3d1 ok # CPR_Desarrollo y CPR_Produccion. 
-464ada52-46bb-4f8e-84f1-0b0a653744fb #No aparece en Santiso.
-479af11b-e2d7-4d55-81d4-1ea5405c19d1 #No aparece en Santiso. CPR_Desarrollo
-
-
-#Distintos Workspaces que aparecen en Santiso, pero están vacíos.
-
-6193ecd2-5ddb-4856-b708-c76763dbe54e
-126a055c-576a-47dd-b4cf-673c49986ceb
-19d7f5f4-6f87-42d9-bdf2-516f1b7bb9dd
-5eb06e89-dc62-4b50-b2f0-3b9d383f036c
-4eea35a9-bcdc-41e7-9898-8ac0c5e91eba
-61dcbd01-8ee0-42d7-b513-f971980b0107
-1942e203-07ee-4719-bcbf-2286bfae8c0a
-d9ac0042-fbaa-4549-a546-c0f82327fbd1
 
 
 $workspace = Get-PowerBIWorkspace -Scope Organization -Name $workspaceName
