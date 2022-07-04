@@ -11,7 +11,7 @@ $prueba2 = Get-PowerBIWorkspace -Scope Organization -User adminiamgwbi@madrid.on
 #Area personal
 $prueba2 = get-powerbiworkspace -Scope Organization -Name 'PersonalWorkspace adminiamgwbi'
 
-Get-PowerBIWorkspace -Scope Organization -User adminsantisogaa@madrid.onmicrosoft.com
+
 
 
 $Arraynames = $prueba2.Name
@@ -144,32 +144,7 @@ $array1[1]
 Get-powerbidataset -scope Organization -WorkspaceId $array1[5][3].guid
 
 Get-PowerBIDatasource -Scope Organization -DatasetId $array1[5][5].guid
-Get-powerbidataset -scope Organization -WorkspaceId c289978f-7601-4f21-bed9-2634a1d13203
 
-#Indices: 5, 18, 38, 78, 80, 81, 155, 513, 514, 515
-
-c289978f-7601-4f21-bed9-2634a1d13203 ok # Se pueden cambiar todos, utilizan DATALAKE_Produccion.
-063451ff-93ed-4d0c-8ea6-7f08a7b9d7b5 ok # HELIX (ODBC) y DATALAKE_Desarrollo.
-36aba724-99d1-4c4a-bf78-8212294b0e60 ok # EazyBI (PostgreSQL ODBC Unicode SSL).
-d49dd5fe-9f0f-42c6-98cc-cea6af6d932f ok # HELIX (ODBC).
-dd90005f-20d2-4777-8760-d227a9d9ac39 ok # DATALAKE_Produccion.
-352c746e-ba10-4258-89a2-540b88f2da67 ok # PowerBI (Hay que hacer el conector).
-80ee77d3-50f1-429e-8e44-750bc22eab1e ok # Clarity_NIKU_sql16pro01 y HELIX (ODBC).
-a00df3a5-8cbb-4c89-bbe7-5449f82af3d1 ok # CPR_Desarrollo y CPR_Produccion. 
-464ada52-46bb-4f8e-84f1-0b0a653744fb #No aparece en Santiso.
-479af11b-e2d7-4d55-81d4-1ea5405c19d1 #No aparece en Santiso. CPR_Desarrollo
-
-
-#Distintos Workspaces que aparecen en Santiso, pero están vacíos.
-
-6193ecd2-5ddb-4856-b708-c76763dbe54e
-126a055c-576a-47dd-b4cf-673c49986ceb
-19d7f5f4-6f87-42d9-bdf2-516f1b7bb9dd
-5eb06e89-dc62-4b50-b2f0-3b9d383f036c
-4eea35a9-bcdc-41e7-9898-8ac0c5e91eba
-61dcbd01-8ee0-42d7-b513-f971980b0107
-1942e203-07ee-4719-bcbf-2286bfae8c0a
-d9ac0042-fbaa-4549-a546-c0f82327fbd1
 
 
 $workspace = Get-PowerBIWorkspace -Scope Organization -Name $workspaceName
@@ -312,7 +287,7 @@ try {
 
 
  $gatewaypre = "93153ed3-9bd4-4b40-9a78-eadc854705c7"
-$gatewaypro = "fd6dcb5d-deb9-4cb7-9806-58dc8be6fa8f"
+ $gatewaypro = "fd6dcb5d-deb9-4cb7-9806-58dc8be6fa8f"
 
 
  #$trabajos | Sort-Object Name    |format-table Id, Name | Out-File -FilePath .\workspaces_todos.txt 
@@ -386,49 +361,12 @@ $b[$i] = $Null
 $b
 
 
- $identificador = "adminiamgwbi@madrid.onmicrosoft.com"
-   $tipo = "User"
-   $permisos = "Admin"
-
-  $postParams = @{
-  
-  "emailAddress" = $identificador
-  "groupUserAccessRight"= $permisos
-}
- $jsonPostBody = $postParams | ConvertTo-JSON
-
- $url= "https://api.powerbi.com/v1.0/myorg/groups/0c2e5c5f-568b-42d6-8d1d-5baf7122c0e9/users"
-
-
-   Invoke-PowerBIRestMethod -Method Post -Body $jsonPostBody -Verbose -url $url 
-
-
-
-
-
-foreach($i in 0..($trabajos).Length) {
-if ($trabajos[1619].Dataflows -ne $null) {
-$id_workspace_con_dataflow[1619] = $null
-
-
-} else {
-
- $id_workspace_con_dataflow[$i] = $trabajos[$i].name, $trabajos[$i].Dataflows
- }
- }
-
-
-
-
  
-(Get-PowerBIworkspace -Scope Organization -id c289978f-7601-4f21-bed9-2634a1d13203).name 
-(Get-PowerBIworkspace -Scope Organization -id 063451ff-93ed-4d0c-8ea6-7f08a7b9d7b5).name
-(Get-PowerBIworkspace -Scope Organization -id 36aba724-99d1-4c4a-bf78-8212294b0e60).name
-(Get-PowerBIworkspace -Scope Organization -id d49dd5fe-9f0f-42c6-98cc-cea6af6d932f).name
-(Get-PowerBIworkspace -Scope Organization -id dd90005f-20d2-4777-8760-d227a9d9ac39).name
-(Get-PowerBIworkspace -Scope Organization -id 352c746e-ba10-4258-89a2-540b88f2da67).name
-(Get-PowerBIworkspace -Scope Organization -id 7faf265f-3fe3-409d-839d-20eba9f96295).name
-(Get-PowerBIworkspace -Scope Organization -id a00df3a5-8cbb-4c89-bbe7-5449f82af3d1).name
-(Get-PowerBIworkspace -Scope Organization -id 464ada52-46bb-4f8e-84f1-0b0a653744fb).name
-(Get-PowerBIworkspace -Scope Organization -id 479af11b-e2d7-4d55-81d4-1ea5405c19d1).name
+
+
+
+
+
+
+
 
